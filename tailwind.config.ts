@@ -50,15 +50,18 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        navy: {
-          DEFAULT: "hsl(var(--navy))",
-          light: "hsl(var(--navy-light))",
-          dark: "hsl(var(--navy-dark))",
+        nude: {
+          DEFAULT: "hsl(var(--nude))",
+          light: "hsl(var(--nude-light))",
+          dark: "hsl(var(--nude-dark))",
         },
-        orange: {
-          DEFAULT: "hsl(var(--orange))",
-          glow: "hsl(var(--orange-glow))",
+        blush: {
+          DEFAULT: "hsl(var(--blush))",
+          glow: "hsl(var(--blush-glow))",
         },
+        cream: "hsl(var(--cream))",
+        espresso: "hsl(var(--espresso))",
+        sand: "hsl(var(--sand))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -100,6 +103,19 @@ export default {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
         },
+        ripple: {
+          "0%": { transform: "translate(-50%, -50%) scale(1)", opacity: "1" },
+          "100%": { transform: "translate(-50%, -50%) scale(2)", opacity: "0" },
+        },
+        "meteor-effect": {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+          "70%": { opacity: "1" },
+          "100%": { transform: "rotate(215deg) translateX(-500px)", opacity: "0" },
+        },
+        "border-beam": {
+          "0%": { "offset-distance": "0%" },
+          "100%": { "offset-distance": "100%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -108,6 +124,9 @@ export default {
         "fade-in-right": "fade-in-right 0.6s ease-out",
         "scale-in": "scale-in 0.4s ease-out",
         shimmer: "shimmer 2s infinite linear",
+        ripple: "ripple 3s infinite ease-out",
+        "meteor-effect": "meteor-effect 5s linear infinite",
+        "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
       },
     },
   },
