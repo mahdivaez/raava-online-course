@@ -8,14 +8,14 @@ const mentors = [
     name: "دکتر پارمیدا حسین‌پور",
     role: "اینفلوئنسر و مدل",
     description: "با سال‌ها تجربه در مسیر بلاگری و مدلینگ، تجربیات واقعی و چالش‌های مسیر را با شما به اشتراک می‌گذارد.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80",
+    image: "/parmida.jpg",
     align: "right" as const,
   },
   {
     name: "آفرین بنائی",
     role: "صاحب برند راوا، مدیر روابط عمومی اینفلوئنسرها و نویسنده تبلیغات",
     description: "نگاه حرفه‌ای از سمت برندها و تبلیغات. یاد می‌گیرید چطور با برندها همکاری کنید و از خطاهای رایج دور بمانید.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&q=80",
+    image: "/afarin.jpg",
     align: "left" as const,
   },
 ];
@@ -50,7 +50,7 @@ const MentorBlock = ({ mentor, index }: MentorBlockProps) => {
   return (
     <div 
       ref={ref}
-      className={`relative min-h-[80vh] md:min-h-screen flex items-center ${index % 2 === 0 ? 'bg-card' : 'bg-background'}`}
+      className={`relative min-h-[80vh] md:min-h-screen flex items-center bg-background`}
     >
       {/* Flickering grid background */}
       <FlickeringGrid 
@@ -90,7 +90,7 @@ const MentorBlock = ({ mentor, index }: MentorBlockProps) => {
           </motion.div>
           
           {/* Content side */}
-          <div className={`relative z-10 ${isRight ? 'md:order-1 md:text-right' : 'md:order-2 md:text-left'}`}>
+          <div className={`relative z-10 ${isRight ? 'md:order-1' : 'md:order-2'} text-right`} dir="rtl">
             <BlurFade delay={0.4}>
               <span className="text-primary text-sm font-medium mb-2 block">مربی دوره</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 text-foreground">

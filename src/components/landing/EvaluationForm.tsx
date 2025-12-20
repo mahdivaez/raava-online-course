@@ -8,7 +8,6 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "sonner";
 import { useState } from "react";
 import { Loader2, ArrowRight, CheckCircle2 } from "lucide-react";
-import { BorderBeam } from "@/components/magicui/border-beam";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface BasicFormData {
@@ -85,8 +84,7 @@ export const EvaluationForm = ({ formType, onBack }: EvaluationFormProps) => {
         <AnimatedSection delay={0.2}>
           <form onSubmit={handleSubmit(onSubmit)} className="max-w-2xl mx-auto space-y-8">
             {/* Section: Basic Info - Both forms */}
-            <div className="glass rounded-2xl p-6 space-y-6 relative overflow-hidden">
-              <BorderBeam size={100} duration={12} />
+            <div className="glass rounded-2xl p-6 space-y-6">
               <h3 className="text-lg font-bold text-primary">اطلاعات پایه</h3>
               <div className="space-y-4">
                 <div>
@@ -260,9 +258,8 @@ const PaymentInfo = ({ onBack }: { onBack: () => void }) => {
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
-          <div className="glass rounded-3xl p-8 space-y-6 relative overflow-hidden">
-            <BorderBeam size={120} duration={15} colorFrom="hsl(var(--primary))" colorTo="hsl(var(--accent))" />
-            
+          <div className="glass rounded-3xl p-8 space-y-6">
+
             <h3 className="text-xl font-bold text-center mb-6">اطلاعات پرداخت</h3>
             
             <div className="space-y-4">

@@ -3,6 +3,7 @@ import { Header } from "@/components/landing/Header";
 import { HeroSection } from "@/components/landing/HeroSection";
 import { MentorZigzag } from "@/components/landing/MentorZigzag";
 import { IntroSection } from "@/components/landing/IntroSection";
+import { VideoIntroSection } from "@/components/landing/VideoIntroSection";
 import { ScheduleSection, CapacitySection } from "@/components/landing/ScheduleSection";
 import { StructureSection } from "@/components/landing/StructureSection";
 import { BenefitsSection } from "@/components/landing/BenefitsSection";
@@ -35,9 +36,14 @@ const Index = () => {
         <MentorZigzag />
         
         {/* Scroll velocity text */}
-        <div className="py-12 bg-card overflow-hidden">
+        <div className="py-12 bg-background overflow-hidden">
           <ScrollVelocityRow velocity={3} className="text-4xl md:text-6xl font-black text-primary/20">
             <span className="mx-8">بلاگری</span>
+            <span className="mx-8">•</span>
+            <span className="mx-8">برند شخصی</span>
+            <span className="mx-8">•</span>
+            <span className="mx-8">درآمدزایی</span>
+            <span className="mx-8">•</span>       <span className="mx-8">بلاگری</span>
             <span className="mx-8">•</span>
             <span className="mx-8">برند شخصی</span>
             <span className="mx-8">•</span>
@@ -47,6 +53,7 @@ const Index = () => {
         </div>
         
         <IntroSection />
+        <VideoIntroSection />
         <ScheduleSection />
         <CapacitySection />
         <StructureSection />

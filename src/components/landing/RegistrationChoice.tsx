@@ -2,7 +2,6 @@ import { AnimatedSection } from "./AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { BookOpen, Users } from "lucide-react";
-import { BorderBeam } from "@/components/magicui/border-beam";
 import { DotPattern } from "@/components/magicui/dot-pattern";
 
 interface RegistrationChoiceProps {
@@ -32,7 +31,6 @@ export const RegistrationChoice = ({ onChoose }: RegistrationChoiceProps) => {
               className="relative p-8 rounded-3xl bg-card border border-border h-full flex flex-col overflow-hidden group cursor-pointer"
               onClick={() => onChoose("course-only")}
             >
-              <BorderBeam size={150} duration={10} delay={0} />
               
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <BookOpen className="w-8 h-8 text-primary" />
@@ -72,9 +70,8 @@ export const RegistrationChoice = ({ onChoose }: RegistrationChoiceProps) => {
               className="relative p-8 rounded-3xl bg-gradient-to-br from-primary/5 to-accent/5 border-2 border-primary/30 h-full flex flex-col overflow-hidden group cursor-pointer"
               onClick={() => onChoose("work-with-rava")}
             >
-              <BorderBeam size={150} duration={10} delay={5} colorFrom="hsl(var(--accent))" colorTo="hsl(var(--primary))" />
               
-              <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-accent/20 text-accent text-xs font-medium">
+              <div className="absolute top-1 right-4 px-3 py-1 rounded-full bg-accent/20 text-accent text-xs font-medium">
                 پیشنهاد ویژه
               </div>
               
