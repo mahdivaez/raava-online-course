@@ -7,7 +7,7 @@ const navItems = [
   { label: "سرفصل‌ها", href: "#syllabus" },
   { label: "مربیان", href: "#mentors" },
   { label: "هزینه", href: "#pricing" },
-  { label: "ثبت‌نام", href: "#form" },
+  { label: "ثبت‌نام", href: "#registration-choice" },
 ];
 
 export const Header = () => {

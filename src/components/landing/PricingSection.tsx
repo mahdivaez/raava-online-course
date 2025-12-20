@@ -12,7 +12,7 @@ export const PricingSection = () => {
   ];
 
   const scrollToForm = () => {
-    const element = document.querySelector("#form");
+    const element = document.querySelector("#registration-choice");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
   const scrollToForm = () => {
-    document.querySelector("#form")?.scrollIntoView({ behavior: "smooth" });
+    document.querySelector("#registration-choice")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
