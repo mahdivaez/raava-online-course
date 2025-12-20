@@ -1,5 +1,4 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { DarkModeToggle } from "./DarkModeToggle";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
@@ -70,8 +69,6 @@ export const Header = () => {
           </nav>
           
           <div className="flex items-center gap-3">
-            <DarkModeToggle />
-            
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden p-2 text-foreground"
