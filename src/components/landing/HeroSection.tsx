@@ -3,7 +3,6 @@ import { useRef } from "react";
 import { ChevronDown, Sparkles, TrendingUp, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MorphingText } from "@/components/magicui/morphing-text";
-import { Ripple } from "@/components/magicui/ripple";
 import { SpinningText } from "@/components/magicui/spinning-text";
 
 export const HeroSection = () => {
@@ -63,8 +62,6 @@ export const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background/98 via-background/90 to-background" />
       </motion.div>
       
-      {/* Enhanced Ripple effect */}
-      <Ripple className="opacity-30" mainCircleSize={400} numCircles={8} />
       
       {/* Floating orbs */}
       <motion.div
