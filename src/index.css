@@ -2,60 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Persian Badkh Font */
+@font-face {
+  font-family: 'Persian Badkh';
+  src: url('/persian-badkh@t2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
-    /* Light mode - Nude/Muted Elegant Theme */
-    --background: 0 0% 100%;
-    --foreground: 25 20% 15%;
+    /* Based on Color Hunt Palette: #F2EFE7, #9ACBD0, #48A6A7, #006A71 */
+    
+    /* Light mode - Unified Teal & Cream Theme */
+    --background: 45 27% 93%; /* #F2EFE7 (Cream) */
+    --foreground: 184 100% 12%; /* Darkest Teal (High Contrast) */
 
-    --card: 30 20% 98%;
-    --card-foreground: 25 20% 15%;
-    
-    --popover: 30 20% 98%;
-    --popover-foreground: 25 20% 15%;
-    
-    /* Primary: Warm Taupe */
-    --primary: 25 25% 45%;
-    --primary-foreground: 30 20% 98%;
-    
-    --secondary: 30 15% 92%;
-    --secondary-foreground: 25 20% 25%;
-    
-    --muted: 30 15% 90%;
-    --muted-foreground: 25 15% 45%;
-    
-    /* Accent: Rose Gold / Blush */
-    --accent: 15 40% 65%;
-    --accent-foreground: 25 20% 15%;
-    
-    --destructive: 0 60% 50%;
-    --destructive-foreground: 30 20% 98%;
-    
-    --border: 30 15% 85%;
-    --input: 30 15% 85%;
-    --ring: 25 25% 45%;
-    
+    --card: 0 0% 100%;
+    --card-foreground: 184 100% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 184 100% 15%;
+
+    /* Primary: Dark Teal (#006A71) */
+    --primary: 184 100% 22%;
+    --primary-foreground: 45 27% 93%;
+
+    /* Secondary: Light Teal (#9ACBD0) */
+    --secondary: 186 35% 71%;
+    --secondary-foreground: 184 100% 15%;
+
+    --muted: 186 20% 88%;
+    --muted-foreground: 184 30% 40%;
+
+    /* Accent: Medium Teal (#48A6A7) */
+    --accent: 181 40% 47%;
+    --accent-foreground: 45 27% 93%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 186 30% 82%;
+    --input: 186 30% 82%;
+    --ring: 184 100% 22%;
+
     --radius: 0.75rem;
-    
-    /* Custom Colors - Nude Palette */
-    --nude: 25 25% 45%;
-    --nude-light: 30 15% 92%;
-    --nude-dark: 25 20% 25%;
-    --blush: 15 40% 65%;
-    --blush-glow: 15 45% 75%;
-    --cream: 35 30% 92%;
-    --espresso: 25 35% 20%;
-    --sand: 35 20% 80%;
-    
-    /* Sidebar */
-    --sidebar-background: 30 15% 96%;
-    --sidebar-foreground: 25 20% 15%;
-    --sidebar-primary: 25 25% 45%;
-    --sidebar-primary-foreground: 30 20% 98%;
-    --sidebar-accent: 30 15% 92%;
-    --sidebar-accent-foreground: 25 20% 15%;
-    --sidebar-border: 30 15% 85%;
-    --sidebar-ring: 25 25% 45%;
+
+    /* Custom Colors - Unified Teal Palette */
+    --nude: 45 27% 93%;        /* #F2EFE7 */
+    --nude-light: 45 27% 97%;
+    --nude-dark: 184 100% 15%;
+    --blush: 186 35% 71%;      /* Replaced with Light Teal */
+    --blush-glow: 186 45% 85%;
+    --cream: 45 27% 95%;       /* #F2EFE7 Variation */
+    --espresso: 184 100% 10%;  /* Darkest accent */
+    --sand: 45 15% 85%;
+
+    /* Trust Colors - Professional Deep Teals */
+    --trust-primary: 184 100% 22%;
+    --trust-light: 186 35% 90%;
+    --trust-dark: 184 100% 15%;
+
+    /* Luxury Colors - Teal/Gold Mappings */
+    --luxury-gold: 181 40% 47%;   /* Mapped to Medium Teal */
+    --luxury-amber: 186 35% 71%;  /* Mapped to Light Teal */
+    --luxury-bronze: 184 100% 22%;/* Mapped to Dark Teal */
+
+    /* Neutral Colors - Clean Professional Grays */
+    --neutral-50: 186 10% 97%;
+    --neutral-100: 186 10% 94%;
+    --neutral-200: 186 10% 88%;
+    --neutral-300: 186 10% 75%;
+    --neutral-400: 186 10% 60%;
+    --neutral-500: 186 10% 45%;
+    --neutral-600: 186 10% 35%;
+    --neutral-700: 186 10% 25%;
+    --neutral-800: 186 15% 20%;
+    --neutral-900: 186 20% 12%;
+
+    /* Accent Colors - Modern Teal Touches */
+    --accent-teal: 181 40% 47%;
+    --accent-teal-light: 186 35% 90%;
+    --accent-emerald: 170 50% 40%;
+    --accent-emerald-light: 170 50% 90%;
+
+    /* Sidebar - Updated to Cream & Teal */
+    --sidebar-background: 45 27% 91%;
+    --sidebar-foreground: 184 100% 15%;
+    --sidebar-primary: 184 100% 22%;
+    --sidebar-primary-foreground: 45 27% 93%;
+    --sidebar-accent: 186 35% 85%;
+    --sidebar-accent-foreground: 184 100% 22%;
+    --sidebar-border: 186 30% 85%;
+    --sidebar-ring: 184 100% 22%;
   }
 }
 
@@ -71,15 +111,29 @@
   body {
     @apply bg-background text-foreground font-vazir antialiased;
   }
+
+  /* Apply Persian Badkh to headings and large text */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-persianBadkh;
+  }
+
+  .text-xl, .text-2xl, .text-3xl, .text-4xl, .text-5xl, .text-6xl {
+    @apply font-persianBadkh !important;
+  }
+
+  .font-persian-badkh {
+    font-family: 'Persian Badkh', 'Vazir', sans-serif;
+  }
 }
 
 @layer components {
+  /* Gradient now flows through your Teal Palette */
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-l from-primary via-accent to-blush;
+    @apply bg-clip-text text-transparent bg-gradient-to-l from-[hsl(var(--primary))] via-[hsl(var(--accent))] to-[hsl(var(--secondary))];
   }
   
   .text-gradient-nude {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-nude to-blush;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--nude))] to-[hsl(var(--secondary))];
   }
   
   .glow-primary {
@@ -93,8 +147,8 @@
   }
   
   .glow-blush {
-    box-shadow: 0 0 30px hsl(var(--blush) / 0.4),
-                0 0 60px hsl(var(--blush) / 0.2);
+    box-shadow: 0 0 30px hsl(var(--secondary) / 0.4),
+                0 0 60px hsl(var(--secondary) / 0.2);
   }
   
   .glass {
@@ -109,7 +163,7 @@
     @apply backdrop-blur-md bg-cream/50 border border-sand/30;
   }
   
-  /* Elegant border */
+  /* Elegant border using primary Teal */
   .elegant-border {
     box-shadow: 
       1px 0 0 0 hsl(var(--primary) / 0.3),
@@ -122,7 +176,7 @@
     @apply py-16 md:py-24 lg:py-32 px-4 md:px-8;
   }
   
-  /* Grid background */
+  /* Grid background updated to subtle Teal lines */
   .bg-grid {
     background-image: 
       linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px),

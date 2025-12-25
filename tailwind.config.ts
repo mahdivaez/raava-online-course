@@ -14,6 +14,7 @@ export default {
     extend: {
       fontFamily: {
         vazir: ["Vazirmatn", "system-ui", "sans-serif"],
+        persianBadkh: ["Persian Badkh", "Vazir", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -49,6 +50,36 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Brand Color Palette - Trust & Luxury
+        trust: {
+          primary: "hsl(var(--trust-primary))",
+          light: "hsl(var(--trust-light))",
+          dark: "hsl(var(--trust-dark))",
+        },
+        luxury: {
+          gold: "hsl(var(--luxury-gold))",
+          amber: "hsl(var(--luxury-amber))",
+          bronze: "hsl(var(--luxury-bronze))",
+        },
+        neutral: {
+          50: "hsl(var(--neutral-50))",
+          100: "hsl(var(--neutral-100))",
+          200: "hsl(var(--neutral-200))",
+          300: "hsl(var(--neutral-300))",
+          400: "hsl(var(--neutral-400))",
+          500: "hsl(var(--neutral-500))",
+          600: "hsl(var(--neutral-600))",
+          700: "hsl(var(--neutral-700))",
+          800: "hsl(var(--neutral-800))",
+          900: "hsl(var(--neutral-900))",
+        },
+        brand: {
+          teal: "hsl(var(--accent-teal))",
+          "teal-light": "hsl(var(--accent-teal-light))",
+          emerald: "hsl(var(--accent-emerald))",
+          "emerald-light": "hsl(var(--accent-emerald-light))",
+        },
+        // Legacy support
         nude: {
           DEFAULT: "hsl(var(--nude))",
           light: "hsl(var(--nude-light))",
@@ -129,5 +160,6 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require('lightswind/plugin'),require("tailwindcss-animate")],
 } satisfies Config;

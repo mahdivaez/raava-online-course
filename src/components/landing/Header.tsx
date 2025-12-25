@@ -14,16 +14,24 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollY } = useScroll();
   
+  // Transition from transparent to the Cream palette color (#F2EFE7) 
+  // with a slight opacity for a glass effect
   const headerBackground = useTransform(
     scrollY,
     [0, 100],
-    ["rgba(0,0,0,0)", "rgba(0,15,31,0.95)"]
+    ["rgba(242, 239, 231, 0)", "rgba(242, 239, 231, 0.95)"]
   );
   
   const headerBlur = useTransform(
     scrollY,
     [0, 100],
     ["blur(0px)", "blur(10px)"]
+  );
+
+  const headerBorder = useTransform(
+    scrollY,
+    [0, 100],
+    ["rgba(154, 203, 208, 0)", "rgba(154, 203, 208, 0.3)"] // Subtle Light Teal border
   );
 
   const scrollToSection = (href: string) => {
@@ -40,14 +48,15 @@ export const Header = () => {
         style={{ 
           backgroundColor: headerBackground,
           backdropFilter: headerBlur,
+          borderBottomColor: headerBorder,
         }}
-        className="fixed top-0 left-0 right-0 z-50 border-b border-border/0"
+        className="fixed top-0 left-0 right-0 z-50 border-b transition-colors"
       >
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-bold text-primary"
+            className="text-2xl font-bold text-primary" // Uses Dark Teal (#006A71)
           >
             راوا
           </motion.div>
@@ -69,6 +78,14 @@ export const Header = () => {
           </nav>
           
           <div className="flex items-center gap-3">
+            {/* CTA Button Example using Palette Colors */}
+            <button 
+              className="hidden md:block px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-accent transition-colors"
+              onClick={() => scrollToSection('#registration-choice')}
+            >
+              شروع کنید
+            </button>
+            
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden p-2 text-foreground"
@@ -87,14 +104,14 @@ export const Header = () => {
           height: isMenuOpen ? "auto" : 0,
           opacity: isMenuOpen ? 1 : 0
         }}
-        className="fixed top-16 left-0 right-0 z-40 bg-background/95 backdrop-blur-lg border-b border-border overflow-hidden md:hidden"
+        className="fixed top-16 left-0 right-0 z-40 bg-background/98 backdrop-blur-lg border-b border-border overflow-hidden md:hidden"
       >
         <nav className="flex flex-col p-4">
           {navItems.map((item) => (
             <button
               key={item.href}
               onClick={() => scrollToSection(item.href)}
-              className="py-3 text-foreground/80 hover:text-primary transition-colors text-right"
+              className="py-4 text-foreground/80 hover:text-primary transition-colors text-right border-b border-border/50 last:border-0"
             >
               {item.label}
             </button>
