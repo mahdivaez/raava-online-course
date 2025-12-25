@@ -150,7 +150,7 @@ export const VideoIntroSection = () => {
                   <div className="aspect-[9/16] rounded-[3.2rem] overflow-hidden bg-[#001f21] relative border border-white/10">
                     <video
                       ref={videoRef}
-                      src="https://www.w3schools.com/html/mov_bbb.mp4" 
+                      src="https://www.w3schools.com/html/mov_bbb.p4" 
                       poster="/video-sample.jpg"
                       className="w-full h-full object-cover"
                       muted={isMuted}
