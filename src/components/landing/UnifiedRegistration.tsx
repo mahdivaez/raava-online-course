@@ -21,9 +21,9 @@ export const UnifiedRegistrationSection = ({ onChoose }: UnifiedRegistrationProp
   const [step, setStep] = useState<"pricing" | "choice">("pricing");
 
   const timeline = [
-    { label: "ثبت‌نام نهایی", date: "تا ۱۰ دی", icon: <Calendar /> },
-    { label: "ارزیابی و گزینش", date: "تا ۱۵ دی", icon: <CheckCircle2 /> },
-    { label: "آغاز سفر آموزشی", date: "۲۰ دی", icon: <Sparkles /> },
+    { label: "ثبت‌نام نهایی", date: "تا ۲۰ دی", icon: <Calendar /> },
+    { label: "ارزیابی و گزینش", date: "تا ۲۳ دی", icon: <CheckCircle2 /> },
+    { label: "آغاز سفر آموزشی", date: "۲۵ دی", icon: <Sparkles /> },
     { label: "اختتامیه دوره", date: "۲۰ بهمن", icon: <Award className="w-4 h-4" /> }
   ];
 
