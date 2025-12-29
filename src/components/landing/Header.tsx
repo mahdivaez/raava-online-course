@@ -65,7 +65,7 @@ export const Header = () => {
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item, index) => (
               <motion.button
-                key={item.href}
+                key={`${item.href}-${index}`}
                 onClick={() => scrollToSection(item.href)}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -107,9 +107,9 @@ export const Header = () => {
         className="fixed top-16 left-0 right-0 z-40 bg-background/98 backdrop-blur-lg border-b border-border overflow-hidden md:hidden"
       >
         <nav className="flex flex-col p-4">
-          {navItems.map((item) => (
+          {navItems.map((item, index) => (
             <button
-              key={item.href}
+              key={`${item.href}-${index}`}
               onClick={() => scrollToSection(item.href)}
               className="py-4 text-foreground/80 hover:text-primary transition-colors text-right border-b border-border/50 last:border-0"
             >
