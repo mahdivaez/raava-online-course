@@ -41,11 +41,34 @@ export const EvaluationForm = ({ formType, onBack }: EvaluationFormProps) => {
 
   const onSubmit = async (data: BasicFormData | FullFormData) => {
     setIsSubmitting(true);
-    console.log("Form submitted:", data);
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    reset();
+    try {
+      const payload = {
+        ...data,
+        registration_type: formType
+      };
+
+      const response = await fetch('http://localhost:5000/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      const result = await response.json();
+      console.log("Form submitted successfully:", result);
+      setIsSuccess(true);
+      reset();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("خطا در ارسال فرم. لطفاً دوباره تلاش کنید.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const inputClass = "bg-card border-border focus:border-primary text-foreground placeholder:text-muted-foreground";

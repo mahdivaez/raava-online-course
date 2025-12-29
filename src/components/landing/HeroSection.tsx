@@ -75,9 +75,10 @@ export const HeroSection = () => {
           transition={{ delay: 0.2 }}
           className="flex flex-col items-center gap-6 mb-12"
         >
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             className="h-16 px-14 bg-[#002d30] hover:bg-[#004d52] text-white rounded-2xl text-lg md:text-xl font-black group transition-all shadow-xl shadow-[#002d30]/20"
+            onClick={() => document.querySelector('#registration-choice')?.scrollIntoView({ behavior: 'smooth' })}
           >
             تکمیل فرم ورودی و ثبت‌نام
             <ArrowUpLeft className="mr-2 group-hover:-translate-x-1 group-hover:translate-y-1 transition-transform" size={20} />
@@ -100,7 +101,7 @@ export const HeroSection = () => {
         >
           {[
             { icon: Clock, label: "Duration", value: "۲۰ ساعت آموزش" },
-            { icon: Calendar, label: "Timeline", value: "ثبت‌نام تا ۱۰ دی" },
+            { icon: Calendar, label: "Timeline", value: "ثبت‌نام تا ۲۰ دی" },
             { icon: CreditCard, label: "Investment", value: "۶.۷ میلیون" }
           ].map((item, index) => (
             <div key={index} className="py-6 flex flex-col items-center gap-1.5 hover:bg-[#006A71]/5 transition-colors">

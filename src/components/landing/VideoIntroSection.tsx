@@ -47,9 +47,10 @@ export const VideoIntroSection = () => {
   ];
 
   return (
-    <section 
+    <section
+      id="intro"
       ref={containerRef}
-      className="relative overflow-hidden bg-[#002d30] py-32 border-t border-white/5" 
+      className="relative overflow-hidden bg-[#002d30] py-32 border-t border-white/5"
       dir="rtl"
     >
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_20%,rgba(154,203,208,0.08),transparent_50%)] pointer-events-none" />

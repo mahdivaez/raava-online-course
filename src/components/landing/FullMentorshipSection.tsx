@@ -11,7 +11,7 @@ const coaches = [
     description: "تجربیات واقعی مسیر بلاگری و استانداردهای برندینگ شخصی. تمرکز بر هویت بصری و چالش‌های مسیر حرفه‌ای.",
     mainImage: "/parmida.jpg",
     circleImage: "/parmida.jpg",
-    socials: { instagram: "#", linkedin: "#" },
+    socials: { instagram: "https://www.instagram.com/miiiiddaa/"},
     align: "right" as const,
   },
   {
@@ -20,22 +20,25 @@ const coaches = [
     description: "استراتژی همکاری با برندها و مدیریت روابط عمومی. یادگیری اصول بیزنس بلاگری و دوری از خطاهای رایج.",
     mainImage: "/afarin.jpg",
     circleImage: "/afarin.jpg",
-    socials: { instagram: "#", web: "#" },
+    socials: { instagram: "https://www.instagram.com/afarin.banaie/"},
     align: "left" as const,
   },
 ];
 
 const mentorTeam = [
-  { name: "کوثر سهندی", image: "/mahsa-soleymani.JPG" },
-  { name: "زینب سمامی", image: "/zeynab-samay.JPG" },
-  { name: "آیدا پالیزگر", image: "/ayda.jpg" },
-  { name: "مهسا سلیمانی", image: "/mahsa.jpg" },
-  { name: "مینا داوودی", image: "/mina.jpg" },
+  { name: "کوثر سهندی", image: "" },
+  { name: "مهسا سلیمانی ", image: "/IMG_8297.jpg" },
+  { name: "پرهام قدسی", image: "/IMG_8283.jpg" },
+  { name: "زینب سمامی", image: "/IMG_8286.jpg" },
+  { name: "آیدا پالیزگر", image: "/IMG_8288.jpg" },
+  { name: "مینا داوودی", image: "/IMG_8296.jpg" },
+  { name: "فاطمه زارع", image: "/IMG_8300.jpg" }, 
+  { name: "مهیار طوسی نژاد", image: "/IMG_2975.JPG" },
 ];
 
 export const FullMentorshipSection = () => {
   return (
-    <section className="bg-[hsl(var(--nude))] text-[#006A71] overflow-hidden" dir="rtl">
+    <section id="mentors" className="bg-[hsl(var(--nude))] text-[#006A71] overflow-hidden" dir="rtl">
       {/* 1. COACHES (LEADERS) - SCROLL DRIVEN */}
       <div className="relative bg-[#002d30] py-24 text-[#F2EFE7]">
         <div className="pb-12 text-center container mx-auto">

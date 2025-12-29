@@ -135,7 +135,11 @@ export const AdmissionAndTargetSection = () => {
         <div className="mt-20 text-center animate-bounce">
           <div className="flex flex-col items-center gap-4">
             <span className="text-[#48A6A7] font-medium">فرم ارزیابی را در پایین صفحه تکمیل کنید</span>
-            <ArrowDownCircle size={40} className="text-[#006A71]" />
+            <ArrowDownCircle
+              size={40}
+              className="text-[#006A71] cursor-pointer"
+              onClick={() => document.querySelector('#form')?.scrollIntoView({ behavior: 'smooth' })}
+            />
           </div>
         </div>
 

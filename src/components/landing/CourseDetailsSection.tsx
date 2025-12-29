@@ -16,9 +16,9 @@ import { motion } from "framer-motion";
 
 export const CourseDetailsSection = () => {
   const schedule = [
-    { date: "تا ۱۰ دی", event: "مهلت ثبت‌نام", icon: Calendar, color: "from-[#006A71] to-[#48A6A7]" },
-    { date: "تا ۱۵ دی", event: "ارزیابی و گزینش", icon: CheckCircle, color: "from-[#48A6A7] to-[#9ACBD0]" },
-    { date: "۲۰ دی", event: "شروع اولین جلسه", icon: Clock, color: "from-[#006A71] to-[#9ACBD0]" },
+    { date: "تا ۲۰ دی", event: "مهلت ثبت‌نام", icon: Calendar, color: "from-[#006A71] to-[#48A6A7]" },
+    { date: "تا ۲۳ دی", event: "ارزیابی و گزینش", icon: CheckCircle, color: "from-[#48A6A7] to-[#9ACBD0]" },
+    { date: "۲۵ دی", event: "شروع اولین جلسه", icon: Clock, color: "from-[#006A71] to-[#9ACBD0]" },
     { date: "۲۰ بهمن", event: "پایان دوره", icon: Award, color: "from-[#48A6A7] to-[#006A71]" },
   ];
 
@@ -47,7 +47,7 @@ export const CourseDetailsSection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-[#F2EFE7] text-[#002d30] overflow-hidden relative" dir="rtl">
+    <section id="syllabus" className="py-20 md:py-32 bg-[#F2EFE7] text-[#002d30] overflow-hidden relative" dir="rtl">
       {/* Background Decor */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -right-48 w-96 h-96 bg-[#9ACBD0]/20 rounded-full blur-[128px]"></div>
@@ -216,7 +216,10 @@ export const CourseDetailsSection = () => {
 
           {/* FINAL CALL TO ACTION */}
           <div className="flex flex-col items-center">
-            <button className="group relative w-full max-w-2xl overflow-hidden rounded-[2rem]">
+            <button
+              className="group relative w-full max-w-2xl overflow-hidden rounded-[2rem]"
+              onClick={() => document.querySelector('#registration-choice')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-[#006A71] via-[#48A6A7] to-[#006A71] bg-[length:200%_100%] animate-[shimmer_3s_infinite_linear]" />
               <div className="relative bg-[#006A71] hover:bg-transparent text-white py-7 rounded-[2rem] font-black text-xl md:text-2xl transition-all duration-300 flex items-center justify-center gap-4 border-2 border-transparent">
                 <span>ثبت‌نام و شروع سفر حرفه‌ای</span>

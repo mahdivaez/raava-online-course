@@ -19,10 +19,10 @@ export const Footer = () => {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-2xl font-bold text-primary">راوا</div>
-            <div className="flex items-center gap-4">
+            {/* <div className="flex items-center gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary/20 transition-colors" aria-label="Instagram"><Instagram className="w-5 h-5" /></a>
               <a href="#" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary/20 transition-colors" aria-label="Telegram"><Send className="w-5 h-5" /></a>
-            </div>
+            </div> */}
             <p className="text-muted-foreground text-sm">© ۲۰۲۵ راوا - تمامی حقوق محفوظ است</p>
           </div>
         </div>

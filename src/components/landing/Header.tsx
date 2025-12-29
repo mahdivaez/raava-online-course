@@ -6,7 +6,7 @@ const navItems = [
   { label: "معرفی", href: "#intro" },
   { label: "سرفصل‌ها", href: "#syllabus" },
   { label: "مربیان", href: "#mentors" },
-  { label: "هزینه", href: "#pricing" },
+  { label: "هزینه", href: "#registration-choice" },
   { label: "ثبت‌نام", href: "#registration-choice" },
 ];
 
