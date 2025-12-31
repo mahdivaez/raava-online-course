@@ -14,7 +14,7 @@ export const VideoIntroSection = () => {
     const refs = [videoRef1, videoRef2];
     refs.forEach((ref, i) => {
       if (i === index) {
-        ref.current?.play();
+        ref.current?.play().catch(error => console.log("Video play failed:", error));
         setActiveVideo(index);
       } else {
         ref.current?.pause();
@@ -59,7 +59,7 @@ export const VideoIntroSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         
-        {/* CENTERED INTRODUCTION BLOCK - بخش معرفی وسط‌چین شده */}
+        {/* CENTERED INTRODUCTION BLOCK */}
         <div className="max-w-5xl mx-auto text-center mb-32">
           <motion.div 
             initial={{ opacity: 0, y: 30 }} 
@@ -78,7 +78,6 @@ export const VideoIntroSection = () => {
                 در این کلاس یاد می‌گیرید چطور روایت و هویت‌تان را بسازید، محتوایتان را هدفمند کنید، و مسیر همکاری با برندها را حرفه‌ای‌تر پیش ببرید.
               </p>
             </div>
-            {/* Decorative Divider */}
             <div className="mt-16 flex justify-center items-center gap-4 opacity-30">
                 <div className="w-12 h-[1px] bg-[#9ACBD0]" />
                 <Sparkles size={16} className="text-[#9ACBD0]" />
@@ -89,17 +88,13 @@ export const VideoIntroSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
           
-          {/* VIDEO SIDE (MASSIVE & ASYMMETRICAL) */}
+          {/* VIDEO SIDE */}
           <div className="lg:col-span-7 order-1 lg:order-2">
             <div className="flex flex-col md:flex-row gap-8 lg:gap-12">
               {videos.map((video, index) => {
                 const isPlaying = activeVideo === index;
                 return (
                   <div key={index} className={`relative w-full ${index === 1 ? 'md:mt-32' : ''}`}>
-                    {/* Floating Name Tag */}
-                 
-
-                    {/* Massive Video Card */}
                     <div 
                       onClick={() => isPlaying ? handlePause(index) : handlePlay(index)}
                       className="relative aspect-[9/16] rounded-[4rem] overflow-hidden group cursor-pointer shadow-[0_50px_100px_rgba(0,0,0,0.5)] border border-white/10 transition-transform duration-700 hover:scale-[1.02]"
@@ -107,22 +102,24 @@ export const VideoIntroSection = () => {
                       <video
                         ref={video.ref}
                         src={video.src}
+                        poster={video.poster}
                         className="w-full h-full object-cover"
                         muted={isMuted}
                         playsInline
                         loop
+                        preload="metadata"
                       />
 
                       {/* Overlay */}
                       <div className={`absolute inset-0 bg-black/40 transition-opacity duration-700 ${isPlaying ? 'opacity-0' : 'opacity-100'}`} />
 
-                      {/* CENTERED PLAY BUTTON (High Visibility) */}
+                      {/* CENTERED PLAY BUTTON */}
                       <div className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${isPlaying ? 'scale-150 opacity-0' : 'scale-100 opacity-100'}`}>
                         <div className="relative">
                             <div className="absolute inset-[-20px] border border-[#48A6A7]/30 rounded-full animate-[spin_10s_linear_infinite]" />
                             <div className="absolute inset-0 bg-white/20 blur-xl rounded-full animate-pulse" />
                             <div className="relative w-24 h-24 bg-white rounded-full flex items-center justify-center text-[#001a1c] shadow-2xl transition-transform group-hover:scale-110">
-                                <Play fill="currentColor" size={32} className="ml-1" />
+                                {isPlaying ? <Pause fill="currentColor" size={32} /> : <Play fill="currentColor" size={32} className="ml-1" />}
                             </div>
                         </div>
                       </div>
@@ -201,7 +198,6 @@ export const VideoIntroSection = () => {
                 ثبت‌نام و شروع دوره
             </button>
           </div>
-
         </div>
       </div>
     </section>
