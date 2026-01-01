@@ -26,15 +26,18 @@ const coaches = [
 ];
 
 const mentorTeam = [
-  { name: "کوثر سهندی", image: "" },
-  { name: "مهسا سلیمانی ", image: "/IMG_8297.jpg" },
-  { name: "پرهام قدسی", image: "/IMG_8283.jpg" },
+  { name: "کوثر سهندی", image: "/kosar.JPG" },
   { name: "زینب سمامی", image: "/IMG_8286.jpg" },
   { name: "آیدا پالیزگر", image: "/IMG_8288.jpg" },
-  { name: "مینا داوودی", image: "/IMG_8296.jpg" },
   { name: "فاطمه زارع", image: "/IMG_8300.jpg" }, 
+  { name: "مینا داوودی", image: "/IMG_8296.jpg" },
+  { name: "مهسا سلیمانی ", image: "/IMG_8297.jpg" },
   { name: "مهیار طوسی نژاد", image: "/IMG_2975.JPG" },
+  { name: "پرهام قدسی", image: "/IMG_8283.jpg" },
+  { name: "آوین جوادی", image: "/IMG_2975.JPG" },
+
 ];
+
 
 export const FullMentorshipSection = () => {
   return (

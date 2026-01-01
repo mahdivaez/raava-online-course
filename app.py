@@ -3,11 +3,12 @@ from flask_cors import CORS
 import psycopg2
 from psycopg2.extras import RealDictCursor
 from datetime import datetime
+import os
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
-DATABASE_URL = 'postgresql://neondb_owner:npg_Pjodb46xSfJT@ep-purple-term-aduvkfrb-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+DATABASE_URL = os.environ.get('DATABASE_URL', 'postgresql://neondb_owner:npg_Pjodb46xSfJT@ep-purple-term-aduvkfrb-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require')
 
 def get_db_connection():
     conn = psycopg2.connect(DATABASE_URL)
