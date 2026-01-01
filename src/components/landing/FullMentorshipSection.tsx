@@ -26,7 +26,7 @@ const coaches = [
 ];
 
 const mentorTeam = [
-  { name: "کوثر سهندی", image: "/kosar.JPG" },
+  { name: "کوثر سهندی", image: "/kosar.jpg" },
   { name: "زینب سمامی", image: "/IMG_8286.jpg" },
   { name: "آیدا پالیزگر", image: "/IMG_8288.jpg" },
   { name: "فاطمه زارع", image: "/IMG_8300.jpg" }, 
